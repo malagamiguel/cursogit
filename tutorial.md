@@ -161,3 +161,21 @@ Para trabajar con github tenemos que poner la direccion URL del repositorio remo
 ```sh
 git remote add origin https://github.com/malagamiguel/iniciogit.git
 ```
+
+Para subir mi repositorio local al repositorio remoto usamos:
+
+```sh
+git push -u origin master
+```
+
+Listado de los git remote
+
+```sh
+git remote -v
+```
+
+Eliminar los git remote
+
+```sh
+git remote rm nombreDelRemote
+```

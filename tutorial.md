@@ -88,3 +88,76 @@ En consola usamos
 ```sh
 git commit -m "Aqui ira un mensaje para el commit"
 ```
+
+---
+
+## Mostrar una lista de los commits
+
+---
+
+Tenemos varias formas para mostrar una lista de los commits
+
+> Muestra en una linea los commit realizados
+
+```sh
+git log --oneline
+```
+
+> Muestra en una linea los commit realizados pero mas elegantes
+
+```sh
+git log --oneline --decorate --all --graph
+```
+
+---
+
+## Viajar a traves de los commit
+
+---
+
+Vamos a conocer como podemos movernos entre los diferentes commit que tengamos registrados, supongamos que tenemos los siguientes commit:
+
+- f82f457 (HEAD -> master) mas comandos agregados
+- f52f3da nuevos comandos en fundamentos.md
+- e4ab8af mi primer commit
+
+> Viajamos al commit en específico f52f3da y eliminamos los cambios futuros
+
+```sh
+//Este es el metodo principal
+git reset --hard f52f3da
+```
+
+_**Nota1 :**_ Con esto pondremos el HEAD en la direccion del commit indicado y ya no mostraremos los que se encuentran por encima de el.
+
+_**Nota 2:**_ Si queremos regresar a un commit superior tendriamos que recordar su identificador.
+
+> Viajamos al commit en específico f52f3da
+
+```sh
+git reset --mixed f52f3da
+```
+
+> Muestra todos los cambios incluso si borramos los commit
+
+```sh
+git reflog
+```
+
+> Viajamos al commit en específico f52f3da y podemos restaurar los archivos
+
+```sh
+git reset --hard f52f3da
+```
+
+---
+
+## Repositorio remoto
+
+---
+
+Para trabajar con github tenemos que poner la direccion URL del repositorio remoto con .git al final
+
+```sh
+git remote add origin https://github.com/malagamiguel/iniciogit.git
+```
